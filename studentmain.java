@@ -13,10 +13,10 @@ public class StudentMain {
 	}
 
 	public void runApp() {
-		Student student1 = new Student("01", 19);
-		Student student2 = new Student("02", 21);
-		Student student3 = new Student("03", 22);
-		Student student4 = new Student("04", 23);
+		Student student1 = new Student("1", 19);
+		Student student2 = new Student("2", 21);
+		Student student3 = new Student("3", 22);
+		Student student4 = new Student("4", 23);
 		store.add(student1);
 		store.add(student2);
 		store.add(student3);
