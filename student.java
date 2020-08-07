@@ -10,7 +10,7 @@ public class Student
     }
     public Student()
     {
-    	this("1",18);
+    	this("5",20);
     }
     public String getRollno() {
         return rollno;
