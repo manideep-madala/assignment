@@ -1,46 +1,57 @@
-public class Student
-{
-    public String rollno;
-    public int age;
+package org.dxctraining;
 
-    public Student(String rollno,int age)
-    {
-        this.age=age;
-        this.rollno=rollno;
-    }
-    public Student()
-    {
-    	this("5",20);
-    }
-    public String getRollno() {
-        return rollno;
-    }
-
-    public void setRollno(String rollno) {
-        this.rollno = rollno;
-    }
-    
-    public int getAge() {
-		return age;
-	}
-	public void setAge(int age) {
-		this.age = age;
+public class Student{
+	private String rollno,name;
+	private int age; 
+	
+	public Student(String rollno,int age,String name){
+		this.rollno=rollno;
+		this.age=age;
+		this.name=name;
+		
 	}
 	
-	public boolean equals(Object Arg)
-	{
-		if(this==Arg)
-		{
-			return true;
-		}
-		if(Arg==null || !(Arg instanceof Student))
-		{
-			return false;
-		}
-		Student	that=(Student)Arg;
-		boolean isequal=this.age==that.age;
-		return isequal;
+	public String getName() {
+		return name;
 	}
 
+	public void setName(String name) {
+		this.name = name;
+	}
 
+	public String getRollNo() {
+		return rollno;
+	}
+
+public void setRollNo(String rollno) {
+		this.rollno = rollno;
+	}
+
+public int getAge() {
+		return age;
+	}
+	
+	public void setAge(int age) {
+		this.age=age;
+	}	
+	@Override
+	public int hashCode() {
+		int hashcode=rollno.hashCode();
+		return hashcode;
+	}
+	@Override
+	public boolean equals(Object arg) {
+		if(this==arg) {
+			return true;
+		}
+		
+	   if(arg==null || !(arg instanceof Student) ) {
+			return false;
+	   }
+		
+	    Student that=(Student)arg;	
+		boolean isequal=this.rollno .equals(that.rollno);
+		return isequal;
+	}
+	
 }
