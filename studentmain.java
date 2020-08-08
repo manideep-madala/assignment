@@ -1,37 +1,43 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.HashSet;
-import java.util.Set;
+package org.dxctraining;
+
+import java.util.*;
 
 public class StudentMain {
-	Set<Student> store = new HashSet<Student>();
 
-	public static void main(String args[]) {
+	private Map<String, Student> a = new HashMap<>();
 
-		StudentMain demo = new StudentMain();
-		demo.runApp();
+	public static void main(String[] args) {
+		StudentMain run = new StudentMain();
+		run.runApp();
 	}
 
 	public void runApp() {
-		Student student1 = new Student("1", 19);
-		Student student2 = new Student("2", 21);
-		Student student3 = new Student("3", 22);
-		Student student4 = new Student("4", 23);
-		store.add(student1);
-		store.add(student2);
-		store.add(student3);
-		store.add(student4);
-		List<Student> studentage = new ArrayList<Student>(store);
-		display(studentage);
+		a.put("a", (new Student("a", 20)));
+		a.put("b", (new Student("b", 23)));
+		a.put("c", (new Student("c", 24)));
+		a.put("d", (new Student("d", 29)));
+		app();
 	}
-	
-	private void display(List<Student> studentage) {
-		for (Student stobject : studentage) {
-			int age=stobject.getAge();
-			if(age>21)
-			{
-			System.out.println(age);
+
+	public void app() {
+		Set<String> keys = a.keySet();
+		for (String k : keys) {
+			Student s = a.get(k);
+
+			List<String> r = new ArrayList();
+			r.add(s.getRollNo());
+
+			if (s.getAge() % 2 == 0) {
+				List<Student> leven = new ArrayList();
+				leven.add(a.get(k));
+
+			} else {
+				List<Student> lodd = new ArrayList();
+				lodd.add(a.get(k));
+			}
+
 		}
+
 	}
-}
+
 }
