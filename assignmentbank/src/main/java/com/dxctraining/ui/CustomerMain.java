@@ -37,37 +37,37 @@ public class CustomerMain {
 	// Customer[] customers = new Customer[4];
 	public void runApp() {
 		try {
-			Account account1 = new Account(1, "11111pan");
-			Account account2 = new Account(2, "11111pan");
-			Account account3 = new Account(3, "11111pan");
-			Account account4 = new Account(4, "11111pan");
+			Account account1 = new Account(1, "123pan");
+			Account account2 = new Account(2, "123pan");
+			Account account3 = new Account(3, "123pan");
+			Account account4 = new Account(4, "123pan");
 
 			//boolean issame = account1 == account2;// is to check t1, t2 are referring same object
 			//boolean isEquals = account1.equals(account2);// two object are equal (in content)
 			//System.out.println("is same=" + issame);
 			//System.out.println("is equal=" + isEquals);
 
-			final String name1 = "ankit", name2 = "ayushi", name3 = "rahul", name4 = "mohan";
+			final String name1 = "mani", name2 = "teja", name3 = "vamsi", name4 = "vicky";
 
-			Customer customer1 = new RegularCustomer("Jabalpur", 1, "Mohan",234,account1);
+			Customer customer1 = new RegularCustomer("Hyderabad", 1, "Bharat",123,account1);
 			//customer1.setAccount(account1);
 			service.add(customer1);
 			int id1 = customer1.getId();
 			
 			
-			RegularCustomer customer2 = new RegularCustomer("Bhopal", 2, "Sohan", 4567,account2);
+			RegularCustomer customer2 = new RegularCustomer("Pune", 2, "Rakesh", 234,account2);
 			//customer2.setAccount(account2);
 			service.add(customer2);
 			int id2=customer2.getId();
 			
-			BusinessCustomer customer3 = new BusinessCustomer("Indore", 3, "Rohan", 8910,account3);
+			BusinessCustomer customer3 = new BusinessCustomer("Bangalore", 3, "Ram", 456,account3);
 			//customer3.setAccount(account1);
 			service.add(customer3);
 			int id3=customer3.getId();
 			//service.delete(id3);
-			service.updateName(customer3.getId(), "Rohan Rathore");
+			service.updateName(customer3.getId(), "Ram Kumar");
 			
-			BusinessCustomer customer4 = new BusinessCustomer("Raipur", 3, "Gohan", 1112,account4);
+			BusinessCustomer customer4 = new BusinessCustomer("Chennai", 4, "Ravi", 789,account4);
 			//customer4.setAccount(account2);
 			service.add(customer4);
 			int id4 = customer4.getId(); 
@@ -75,7 +75,7 @@ public class CustomerMain {
 			
 			Customer fetched = service.findById(id3);
 			display(fetched);
-			System.out.print("*********diplaying All Customers ***********");
+			System.out.print("diplaying All Customers");
 			displayAll();
 			}
 			catch(InvalidCustomerArgumentException e) {
